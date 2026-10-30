@@ -1,93 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#f4eee5">
+<meta name="theme-color" content="#f6f1e9">
 <title>Daywell — A little more organised. A little more you.</title>
 <style>
-:root{--bg:#f4eee5;--card:#fffdf9;--ink:#282725;--muted:#89847d;--line:#e9e1d7;--accent:#343330;--soft:#eee7dd;--green:#788b76;--rose:#c58f83}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding-bottom:90px}
-body.dark{--bg:#242421;--card:#33332f;--ink:#f7f2ea;--muted:#c2bbb1;--line:#4b4943;--accent:#e9e1d7;--soft:#45433e}
-button,input{font:inherit}button{cursor:pointer}
-.app{max-width:520px;margin:auto;min-height:100vh;padding:22px 18px 30px}
-header{display:flex;justify-content:space-between;align-items:center;margin:5px 2px 22px}
-.brand{font-size:29px;font-weight:800;letter-spacing:-1.3px}.date{color:var(--muted);font-size:13px}
-h1{font-size:30px;line-height:1.12;letter-spacing:-1px;margin:8px 0 7px}h2{font-size:19px;margin:0 0 13px;letter-spacing:-.3px}
-.sub{color:var(--muted);font-size:14px;line-height:1.45;margin:0 0 20px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px;margin:13px 0;box-shadow:0 4px 16px #30271a08}
-.hero{background:#e9dfd2;border:0;padding:22px;color:#292722}.dark .hero{background:#49453e;color:#faf5ed}
-.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);font-weight:700}.hero .eyebrow{color:#766e63}
-.big{font-size:35px;font-weight:800;letter-spacing:-1.3px;margin:7px 0}.muted{color:var(--muted)}.small{font-size:12px;color:var(--muted)}
-.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.amount{font-size:24px;font-weight:800;letter-spacing:-.7px}
-.pill{background:var(--soft);border:0;border-radius:30px;padding:9px 13px;color:var(--ink);font-weight:650;font-size:13px}
-.primary{background:var(--accent);color:var(--bg);border:0;border-radius:15px;padding:13px 17px;font-weight:700}
-.dark .primary{color:#282725}
-.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
-input{background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px;width:100%;min-width:0}
-.form{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}.form input:first-child{grid-column:1/-1}
+:root{--bg:#f6f1e9;--card:#fffdf8;--ink:#302d29;--muted:#8b847b;--line:#eee6dc;--accent:#62594f;--soft:#eee7dd;--green:#82917b;--rose:#c58f83;--gold:#d5b878}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-rounded,"SF Pro Rounded",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding-bottom:100px;transition:.2s}
+body.dark{--bg:#242421;--card:#33332f;--ink:#f7f2ea;--muted:#c2bbb1;--line:#4b4943;--accent:#e9e1d7;--soft:#45433e;--green:#a3b39a;--rose:#d4a094;--gold:#cdb578}
+button,input,select,textarea{font:inherit}button{cursor:pointer}
+.app{max-width:600px;margin:auto;padding:22px 18px 35px}
+header{display:flex;justify-content:space-between;align-items:center;margin:5px 2px 25px}
+.brand{font-size:30px;font-weight:850;letter-spacing:-1.5px}.brand span{color:var(--green)}
+.date{color:var(--muted);font-size:13px}
+h1{font-size:32px;line-height:1.1;letter-spacing:-1.1px;margin:8px 0}
+h2{font-size:19px;margin:0 0 13px;letter-spacing:-.4px}
+h3{font-size:15px;margin:0 0 8px}
+.sub{color:var(--muted);font-size:14px;line-height:1.5;margin:0 0 20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:20px;margin:14px 0;box-shadow:0 5px 22px rgba(73,57,38,.035)}
+.hero{background:#eae1d5;color:#302d29;border:0;padding:24px}.dark .hero{background:#49453e;color:#faf5ed}
+.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);font-weight:800}.hero .eyebrow{color:#82786c}
+.big{font-size:36px;font-weight:850;letter-spacing:-1.5px;margin:8px 0}
+.muted{color:var(--muted)}.small{font-size:12px;color:var(--muted)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.amount{font-size:23px;font-weight:800;letter-spacing:-.6px}
+.pill{background:var(--soft);border:0;border-radius:30px;padding:9px 14px;color:var(--ink);font-weight:700;font-size:12px}
+.primary{background:var(--accent);color:var(--bg);border:0;border-radius:16px;padding:13px 17px;font-weight:750}
+.secondary{background:var(--soft);color:var(--ink);border:0;border-radius:15px;padding:12px 15px;font-weight:700}
+input,select,textarea{background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:13px;padding:12px;width:100%;min-width:0}
+textarea{resize:vertical}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}.form .wide{grid-column:1/-1}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}
 .item{display:flex;align-items:center;gap:11px;padding:12px 0;border-bottom:1px solid var(--line)}.item:last-child{border:0;padding-bottom:0}
-.item label{flex:1}.item.done label{text-decoration:line-through;color:var(--muted)}
-.check{width:22px;height:22px;border:1.5px solid #aaa397;border-radius:50%;display:grid;place-items:center;background:transparent;color:white;padding:0;flex-shrink:0}.check.on{background:var(--green);border-color:var(--green)}
-.delete{border:0;background:transparent;color:var(--muted);font-size:20px;padding:4px 7px}
-nav{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:9px 4px calc(9px + env(safe-area-inset-bottom));z-index:5}
+.item label{flex:1;min-width:0}.item.done label{text-decoration:line-through;color:var(--muted)}
+.check{width:23px;height:23px;border:1.5px solid #aaa397;border-radius:50%;display:grid;place-items:center;background:transparent;color:white;padding:0;flex-shrink:0}
+.check.on{background:var(--green);border-color:var(--green)}
+.delete{border:0;background:transparent;color:var(--muted);font-size:21px;padding:3px 7px}
+.progress{height:9px;border-radius:20px;background:var(--soft);overflow:hidden;margin:12px 0}
+.progress span{display:block;height:100%;background:var(--green);border-radius:20px;transition:width .2s}
+nav{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:9px 3px calc(9px + env(safe-area-inset-bottom));z-index:5}
 nav button{border:0;background:transparent;color:var(--muted);font-size:10px;display:flex;flex-direction:column;align-items:center;gap:4px;min-width:48px;padding:4px}
-nav button b{font-size:19px;font-weight:500}nav button.active{color:var(--ink);font-weight:800}
+nav button b{font-size:19px;font-weight:600}nav button.active{color:var(--ink);font-weight:850}
 .page{display:none}.page.active{display:block}
-.welcome{min-height:90vh;display:flex;flex-direction:column;justify-content:space-between;padding:38px 8px 30px}.welcome .brand{font-size:38px}.welcome h1{font-size:42px;max-width:340px;margin-top:60px}.welcome .sub{font-size:16px;max-width:290px}
-.progress{height:9px;border-radius:20px;background:var(--soft);overflow:hidden;margin:12px 0}.progress span{display:block;height:100%;background:var(--green);border-radius:20px}
-.daystrip{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin:12px 0}.day{background:var(--soft);border:0;border-radius:13px;padding:10px 2px;color:var(--ink);font-size:12px}.day strong{display:block;font-size:15px;margin-top:5px}
-.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;text-align:center}.calendar div{padding:9px 0;border-radius:10px;font-size:13px}.calendar .today{background:var(--accent);color:var(--bg);font-weight:800}
-.toast{position:fixed;bottom:88px;left:50%;transform:translateX(-50%);background:var(--accent);color:var(--bg);padding:10px 15px;border-radius:20px;font-size:13px;display:none;z-index:9}
+.welcome{min-height:85vh;display:flex;flex-direction:column;justify-content:space-between;padding:38px 8px 30px}
+.welcome .brand{font-size:40px}.welcome h1{font-size:44px;max-width:360px;margin:55px 0 12px}.welcome .sub{font-size:16px;max-width:300px}
+.statgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{background:var(--soft);border-radius:18px;padding:14px}.stat strong{display:block;font-size:21px;margin-top:5px}
+.daystrip{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin:12px 0}
+.day{background:var(--soft);border:0;border-radius:13px;padding:10px 2px;color:var(--ink);font-size:11px}
+.day strong{display:block;font-size:15px;margin-top:5px}
+.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;text-align:center}
+.calendar div{padding:9px 0;border-radius:10px;font-size:13px}
+.calendar .today{background:var(--accent);color:var(--bg);font-weight:800}
+.calendar .has-event:after{content:"•";display:block;color:var(--rose);line-height:8px}
+.moodbtn{font-size:22px;padding:10px;border-radius:15px;border:1px solid var(--line);background:var(--bg)}
+.moodbtn.selected{outline:2px solid var(--green);background:var(--soft)}
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:var(--accent);color:var(--bg);padding:10px 16px;border-radius:22px;font-size:13px;display:none;z-index:9}
+.empty{font-size:13px;color:var(--muted);padding:8px 0}
+@media(min-width:650px){.app{padding:30px 24px}.card{padding:23px}}
 </style>
 </head>
 <body>
 <div class="app">
 <section id="welcome" class="welcome">
-  <div class="brand">daywell.</div>
-  <div><h1>A little more organised.<br>A little more you.</h1><p class="sub">Your money. Your health. Your plans. All in one place.</p></div>
+  <div class="brand">daywell<span>.</span></div>
+  <div><div class="eyebrow">A softer way to stay on top of life</div><h1>A little more organised.<br>A little more you.</h1><p class="sub">Your money, wellbeing, plans and little everyday wins — all in one calm place.</p></div>
   <button class="primary" onclick="startApp()" style="width:100%;padding:17px">Let's get started&nbsp; →</button>
 </section>
 <div id="main" style="display:none">
-<header><div class="brand">daywell.</div><div class="date" id="todayDate"></div></header>
+<header><div class="brand">daywell<span>.</span></div><div class="date" id="todayDate"></div></header>
 <section id="today" class="page active">
 <h1>Today, gently.</h1><p class="sub">A little progress is still progress.</p>
-<div class="card hero"><div class="eyebrow">Your day at a glance</div><div class="big">Make today count.</div><div>One thing at a time. You've got this.</div></div>
-<div class="card"><div class="row"><h2>Budget left</h2><span class="small">This month</span></div><div class="amount" id="todayBalance">£0.00</div><div class="small">Your income minus your spending</div></div>
-<div class="card"><div class="row"><h2>Today's tasks</h2><button class="pill" onclick="showPage('tasks')">View all</button></div><div id="todayTasks"></div></div>
+<div class="card hero"><div class="eyebrow">A little reminder</div><div class="big">You’ve got this.</div><div>One thing at a time. Make space for you, too.</div></div>
+<div class="statgrid">
+<div class="stat"><div class="eyebrow">Budget left</div><strong id="todayBalance">£0.00</strong><span class="small">This month</span></div>
+<div class="stat"><div class="eyebrow">Tasks left</div><strong id="todayTaskCount">0</strong><span class="small">One step at a time</span></div>
+</div>
+<div class="card"><div class="row"><h2>Today's focus</h2><button class="pill" onclick="showPage('tasks')">View tasks →</button></div><div id="todayTasks"></div></div>
 <div class="card"><div class="row"><h2>Little health check-in</h2><span class="small">Water today</span></div><div class="row"><div class="amount" id="waterCount">0 / 8</div><button class="pill" onclick="addWater()">＋ Add a glass</button></div><div class="progress"><span id="waterBar" style="width:0%"></span></div></div>
+<div class="card"><h2>Coming up</h2><div id="upcomingToday" class="empty">Your upcoming dates will appear here.</div></div>
 </section>
 <section id="budget" class="page">
-<h1>Your budget.</h1><p class="sub">Know what's coming in and what's going out.</p>
-<div class="card hero"><div class="eyebrow">Money left</div><div class="big" id="balance">£0.00</div><div class="small" style="color:#766e63">Income less outgoings</div></div>
-<div class="card"><div class="row"><h2>Income</h2><strong id="incomeTotal">£0.00</strong></div><div id="incomeList"></div><div class="form"><input id="incomeName" placeholder="Income source"><input id="incomeValue" type="number" min="0" step=".01" placeholder="Amount £"></div><div class="actions"><button class="primary" onclick="addEntry('income')">＋ Add income</button></div></div>
-<div class="card"><div class="row"><h2>Outgoings</h2><strong id="expenseTotal">£0.00</strong></div><div id="expenseList"></div><div class="form"><input id="expenseName" placeholder="What did you spend on?"><input id="expenseValue" type="number" min="0" step=".01" placeholder="Amount £"></div><div class="actions"><button class="primary" onclick="addEntry('expense')">＋ Add outgoing</button></div></div>
+<h1>Your budget.</h1><p class="sub">A clearer picture of your money, without the judgement.</p>
+<div class="card hero"><div class="eyebrow">Money left</div><div class="big" id="balance">£0.00</div><div>Income minus your spending</div></div>
+<div class="statgrid"><div class="stat"><span class="eyebrow">Income</span><strong id="incomeTotal">£0.00</strong></div><div class="stat"><span class="eyebrow">Outgoings</span><strong id="expenseTotal">£0.00</strong></div></div>
+<div class="card"><div class="row"><h2>Income</h2><span class="small">Money coming in</span></div><div id="incomeList"></div><div class="form"><input id="incomeName" class="wide" placeholder="Income source"><input id="incomeValue" type="number" min="0" step=".01" placeholder="Amount £"></div><div class="actions"><button class="primary" onclick="addEntry('income')">＋ Add income</button></div></div>
+<div class="card"><div class="row"><h2>Outgoings</h2><span class="small">Money going out</span></div><div id="expenseList"></div><div class="form"><input id="expenseName" class="wide" placeholder="What did you spend on?"><input id="expenseValue" type="number" min="0" step=".01" placeholder="Amount £"></div><div class="actions"><button class="primary" onclick="addEntry('expense')">＋ Add outgoing</button></div></div>
+<div class="card"><h2>Savings goal</h2><p class="small">Give yourself something lovely to work towards.</p><input id="savingName" placeholder="What are you saving for?"><div class="form"><input id="savingTarget" type="number" min="1" placeholder="Target £"><input id="savingCurrent" type="number" min="0" placeholder="Saved so far £"></div><div class="progress"><span id="savingBar" style="width:0%"></span></div><div class="row"><span id="savingLabel" class="small">No savings goal set</span><button class="secondary" onclick="saveGoal()">Save goal</button></div></div>
 </section>
 <section id="health" class="page">
-<h1>Look after you.</h1><p class="sub">Small habits, softer days.</p>
-<div class="card"><div class="row"><h2>Water tracker</h2><span class="small">Daily goal: 8 glasses</span></div><div class="amount" id="waterCount2">0 / 8</div><div class="progress"><span id="waterBar2" style="width:0%"></span></div><button class="primary" onclick="addWater()">＋ Add a glass</button></div>
-<div class="card"><h2>How are you feeling?</h2><div class="actions" id="moods"><button class="pill" onclick="mood('😊')">😊 Good</button><button class="pill" onclick="mood('😐')">😐 Okay</button><button class="pill" onclick="mood('😔')">😔 Low</button></div><p class="small" id="moodText">Your check-in is just for you.</p></div>
-<div class="card"><h2>Movement</h2><p class="muted">A walk, a stretch, or a little workout — it all counts.</p><input id="workout" placeholder="Add a movement note"><div class="actions"><button class="primary" onclick="addWorkout()">Save note</button></div><div id="workoutList"></div></div>
+<h1>Look after you.</h1><p class="sub">Small habits, softer days. Your wellbeing matters.</p>
+<div class="card"><div class="row"><h2>Water tracker</h2><span class="small">Daily goal: 8 glasses</span></div><div class="amount" id="waterCount2">0 / 8</div><div class="progress"><span id="waterBar2" style="width:0%"></span></div><div class="actions"><button class="primary" onclick="addWater()">＋ Add a glass</button><button class="secondary" onclick="resetWater()">Reset</button></div></div>
+<div class="card"><h2>How are you feeling?</h2><p class="small">No right or wrong answer. Just check in with yourself.</p><div class="actions" id="moods"><button class="moodbtn" onclick="mood('😊','Good')">😊</button><button class="moodbtn" onclick="mood('😐','Okay')">😐</button><button class="moodbtn" onclick="mood('😔','Low')">😔</button><button class="moodbtn" onclick="mood('😴','Tired')">😴</button><button class="moodbtn" onclick="mood('🥰','Great')">🥰</button></div><p class="small" id="moodText">Your check-in is just for you.</p></div>
+<div class="card"><h2>Movement</h2><p class="muted">A walk, a stretch, or a little workout — it all counts.</p><input id="workout" placeholder="What movement did you do?"><div class="actions"><button class="primary" onclick="addWorkout()">Save movement</button></div><div id="workoutList"></div></div>
+<div class="card"><h2>A little note to yourself</h2><textarea id="healthNote" rows="3" placeholder="Anything you want to remember about today..."></textarea><div class="actions"><button class="secondary" onclick="saveNote()">Save note</button></div><p class="small" id="noteSaved"></p></div>
 </section>
 <section id="tasks" class="page">
 <h1>Your tasks.</h1><p class="sub">Get it out of your head and onto your list.</p>
-<div class="card"><h2>Add a task</h2><div class="row"><input id="taskInput" placeholder="What needs doing?"><button class="primary" onclick="addTask()">Add</button></div></div>
+<div class="card"><h2>Add a task</h2><input id="taskInput" placeholder="What needs doing?"><div class="form"><select id="taskPriority"><option value="Normal">Normal priority</option><option value="Important">Important</option><option value="Whenever">Whenever</option></select><input id="taskDue" type="date"></div><div class="actions"><button class="primary" onclick="addTask()">＋ Add task</button></div></div>
 <div class="card"><div class="row"><h2>To do</h2><span class="small" id="taskCount"></span></div><div id="taskList"></div></div>
+<div class="card"><div class="row"><h2>Completed</h2><button class="pill" onclick="clearCompleted()">Clear completed</button></div><div id="completedList" class="empty">Your finished tasks will appear here.</div></div>
 </section>
 <section id="dates" class="page">
-<h1>Your dates.</h1><p class="sub">The week ahead, all in one place.</p>
-<div class="card"><div class="row"><h2>This week</h2><span class="small">7 days</span></div><div class="daystrip" id="week"></div></div>
-<div class="card"><h2>October 2026</h2><div class="calendar" id="calendar"></div></div>
-<div class="card"><h2>Add a date to remember</h2><input id="eventName" placeholder="What's happening?"><div class="form"><input id="eventDate" type="date"><button class="primary" onclick="addEvent()">Save date</button></div><div id="eventList"></div></div>
+<h1>Your dates.</h1><p class="sub">The little things, the big things, and everything in between.</p>
+<div class="card"><div class="row"><h2 id="monthTitle">This month</h2><div><button class="pill" onclick="changeMonth(-1)">‹</button> <button class="pill" onclick="changeMonth(1)">›</button></div></div><div class="calendar" id="calendar"></div></div>
+<div class="card"><h2>Add a date to remember</h2><input id="eventName" placeholder="What's happening?"><div class="form"><input id="eventDate" type="date"><select id="eventType"><option>Personal</option><option>Appointment</option><option>Birthday</option><option>Work</option><option>Reminder</option></select></div><div class="actions"><button class="primary" onclick="addEvent()">Save date</button></div><div id="eventList"></div></div>
 </section>
 <section id="space" class="page">
 <h1>Your space.</h1><p class="sub">Make Daywell feel like yours.</p>
-<div class="card"><h2>Appearance</h2><div class="row"><span>Dark mode</span><button class="pill" onclick="toggleDark()" id="darkButton">Turn on</button></div></div>
-<div class="card"><h2>A little reminder</h2><p class="muted">You don't have to do it all today. You're allowed to take things one step at a time.</p></div>
-<div class="card"><h2>Daywell</h2><p class="small">Your money. Your health. Your plans. All in one place.</p></div>
+<div class="card"><div class="row"><div><h2>Appearance</h2><p class="small">Choose the look that feels right.</p></div><button class="pill" onclick="toggleDark()" id="darkButton">☾ Dark mode</button></div></div>
+<div class="card"><h2>Your preferences</h2><label class="small" for="displayName">What should Daywell call you?</label><input id="displayName" placeholder="Your name"><div class="actions"><button class="secondary" onclick="saveName()">Save name</button></div><p class="small" id="nameSaved"></p></div>
+<div class="card"><h2>A little reminder</h2><p class="muted">You don't have to do it all today. You're allowed to take things one step at a time. Rest is productive, too.</p></div>
+<div class="card"><h2>Your Daywell data</h2><p class="small">Your entries are saved in this browser on this device.</p><button class="secondary" onclick="exportData()">Export my data</button></div>
+<div class="card"><h2>Daywell</h2><p class="small">A little more organised. A little more you.</p><span class="small">Version 2.0</span></div>
 </section>
-</div>
-</div>
+</div></div>
 <nav id="nav" style="display:none">
 <button class="active" onclick="showPage('today',this)"><b>⌂</b>Today</button>
 <button onclick="showPage('budget',this)"><b>£</b>Budget</button>
@@ -98,24 +126,40 @@ nav button b{font-size:19px;font-weight:500}nav button.active{color:var(--ink);f
 </nav>
 <div class="toast" id="toast"></div>
 <script>
-let incomes=[],expenses=[],tasks=[{name:"Plan my week",done:false},{name:"Drink some water",done:false}],water=0,workouts=[],events=[];
-const money=n=>new Intl.NumberFormat('en-GB',{style:'currency',currency:'GBP'}).format(n||0);
-function startApp(){document.getElementById('welcome').style.display='none';document.getElementById('main').style.display='block';document.getElementById('nav').style.display='flex';render(); }
-function showPage(id,btn){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');else [...document.querySelectorAll('nav button')].find(b=>b.textContent.toLowerCase().includes(id==='space'?'my space':id))?.classList.add('active');}
-function addEntry(type){let n=document.getElementById(type==='income'?'incomeName':'expenseName'),v=document.getElementById(type==='income'?'incomeValue':'expenseValue');if(!n.value.trim()||!(+v.value>0)){toast('Add a description and amount first');return}(type==='income'?incomes:expenses).push({name:n.value.trim(),value:+v.value});n.value='';v.value='';renderBudget();}
-function removeEntry(type,i){(type==='income'?incomes:expenses).splice(i,1);renderBudget();}
-function renderBudget(){let inc=incomes.reduce((s,x)=>s+x.value,0),exp=expenses.reduce((s,x)=>s+x.value,0),bal=inc-exp;['balance','todayBalance'].forEach(id=>document.getElementById(id).textContent=money(bal));document.getElementById('incomeTotal').textContent=money(inc);document.getElementById('expenseTotal').textContent=money(exp);document.getElementById('incomeList').innerHTML=incomes.map((x,i)=>`<div class="item"><label>${esc(x.name)}</label><strong>${money(x.value)}</strong><button class="delete" onclick="removeEntry('income',${i})">×</button></div>`).join('');document.getElementById('expenseList').innerHTML=expenses.map((x,i)=>`<div class="item"><label>${esc(x.name)}</label><strong>${money(x.value)}</strong><button class="delete" onclick="removeEntry('expense',${i})">×</button></div>`).join('');}
-function addTask(){let x=document.getElementById('taskInput');if(!x.value.trim())return;tasks.push({name:x.value.trim(),done:false});x.value='';renderTasks();}
-function toggleTask(i){tasks[i].done=!tasks[i].done;renderTasks();}
-function removeTask(i){tasks.splice(i,1);renderTasks();}
-function renderTasks(){let html=tasks.map((t,i)=>`<div class="item ${t.done?'done':''}"><button class="check ${t.done?'on':''}" onclick="toggleTask(${i})">${t.done?'✓':''}</button><label>${esc(t.name)}</label><button class="delete" aria-label="Remove task" onclick="removeTask(${i})">×</button></div>`).join('')||'<p class="muted">Nothing on your list. Enjoy the breathing space.</p>';document.getElementById('taskList').innerHTML=html;document.getElementById('todayTasks').innerHTML=tasks.slice(0,3).map((t,i)=>`<div class="item ${t.done?'done':''}"><button class="check ${t.done?'on':''}" onclick="toggleTask(${i})">${t.done?'✓':''}</button><label>${esc(t.name)}</label></div>`).join('')||'<p class="muted">No tasks yet.</p>';document.getElementById('taskCount').textContent=tasks.filter(t=>!t.done).length+' left';}
-function addWater(){water=Math.min(8,water+1);document.getElementById('waterCount').textContent=water+' / 8';document.getElementById('waterCount2').textContent=water+' / 8';document.getElementById('waterBar').style.width=water/8*100+'%';document.getElementById('waterBar2').style.width=water/8*100+'%';}
-function mood(m){document.getElementById('moodText').textContent='Today you’re feeling '+m+'. Thanks for checking in.'}
-function addWorkout(){let x=document.getElementById('workout');if(!x.value.trim())return;workouts.push(x.value.trim());x.value='';document.getElementById('workoutList').innerHTML=workouts.map(w=>`<div class="item">${esc(w)}</div>`).join('');}
-function addEvent(){let n=document.getElementById('eventName'),d=document.getElementById('eventDate');if(!n.value.trim()||!d.value){toast('Add a name and date');return}events.push({name:n.value,date:d.value});document.getElementById('eventList').innerHTML=events.map(e=>`<div class="item"><label>${esc(e.name)}<div class="small">${e.date}</div></label></div>`).join('');n.value='';d.value='';}
-function toggleDark(){document.body.classList.toggle('dark');document.getElementById('darkButton').textContent=document.body.classList.contains('dark')?'Turn off':'Turn on'}
-function toast(s){let t=document.getElementById('toast');t.textContent=s;t.style.display='block';setTimeout(()=>t.style.display='none',1800)}
-function esc(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
-function render(){renderBudget();renderTasks();let d=new Date();document.getElementById('todayDate').textContent=d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'});let w=document.getElementById('week');let start=new Date(d);start.setDate(d.getDate()-((d.getDay()+6)%7));w.innerHTML=Array.from({length:7},(_,i)=>{let x=new Date(start);x.setDate(start.getDate()+i);return `<div class="day">${x.toLocaleDateString('en-GB',{weekday:'short'})}<strong>${x.getDate()}</strong></div>`}).join('');let c=document.getElementById('calendar');let days=['M','T','W','T','F','S','S'];let offset=(new Date(2026,9,1).getDay()+6)%7;c.innerHTML=days.map(x=>`<div class="small">${x}</div>`).join('')+Array.from({length:offset},()=>'<div></div>').join('')+Array.from({length:31},(_,i)=>`<div class="${i+1===30?'today':''}">${i+1}</div>`).join('');}
+const defaults={incomes:[],expenses:[],tasks:[{name:"Plan my week",done:false,priority:"Normal",due:""},{name:"Drink some water",done:false,priority:"Whenever",due:""}],water:0,workouts:[],events:[],goal:{name:"",target:0,current:0},note:"",name:"",mood:""};
+let data={...defaults};try{data={...defaults,...JSON.parse(localStorage.getItem('daywell-v2')||'{}')}}catch(e){}
+let calDate=new Date();const $=id=>document.getElementById(id);
+const money=n=>new Intl.NumberFormat('en-GB',{style:'currency',currency:'GBP'}).format(Number(n)||0);
+function persist(){localStorage.setItem('daywell-v2',JSON.stringify(data))}
+function toast(s){let t=$('toast');t.textContent=s;t.style.display='block';setTimeout(()=>t.style.display='none',1800)}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function startApp(){$('welcome').style.display='none';$('main').style.display='block';$('nav').style.display='flex';renderAll()}
+function showPage(id,btn){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');else [...document.querySelectorAll('nav button')].find(b=>b.textContent.toLowerCase().includes(id==='space'?'my space':id))?.classList.add('active')}
+function addEntry(type){let n=$(type+'Name'),v=$(type+'Value');if(!n.value.trim()||!(+v.value>0)){toast('Add a description and amount first');return}data[type==='income'?'incomes':'expenses'].push({name:n.value.trim(),value:+v.value});n.value='';v.value='';persist();renderBudget()}
+function removeEntry(type,i){data[type==='income'?'incomes':'expenses'].splice(i,1);persist();renderBudget()}
+function renderBudget(){let inc=data.incomes.reduce((s,x)=>s+x.value,0),exp=data.expenses.reduce((s,x)=>s+x.value,0),bal=inc-exp;['balance','todayBalance'].forEach(id=>$(id).textContent=money(bal));$('incomeTotal').textContent=money(inc);$('expenseTotal').textContent=money(exp);['income','expense'].forEach(type=>{let arr=data[type==='income'?'incomes':'expenses'];$(type+'List').innerHTML=arr.map((x,i)=>`<div class="item"><label>${esc(x.name)}</label><strong>${money(x.value)}</strong><button class="delete" onclick="removeEntry('${type}',${i})">×</button></div>`).join('')||'<div class="empty">Nothing added yet.</div>'});let g=data.goal;$('savingName').value=g.name;$('savingTarget').value=g.target||'';$('savingCurrent').value=g.current||'';let pct=g.target?Math.min(100,g.current/g.target*100):0;$('savingBar').style.width=pct+'%';$('savingLabel').textContent=g.target?`${money(g.current)} saved of ${money(g.target)} (${Math.round(pct)}%)`:'No savings goal set'}
+function saveGoal(){data.goal={name:$('savingName').value.trim(),target:+$('savingTarget').value,current:+$('savingCurrent').value};persist();renderBudget();toast('Savings goal saved')}
+function addTask(){let x=$('taskInput');if(!x.value.trim())return;data.tasks.push({name:x.value.trim(),done:false,priority:$('taskPriority').value,due:$('taskDue').value});x.value='';$('taskDue').value='';persist();renderTasks()}
+function toggleTask(i){data.tasks[i].done=!data.tasks[i].done;persist();renderTasks()}
+function removeTask(i){data.tasks.splice(i,1);persist();renderTasks()}
+function clearCompleted(){data.tasks=data.tasks.filter(t=>!t.done);persist();renderTasks()}
+function renderTasks(){let pending=data.tasks.filter(t=>!t.done),done=data.tasks.filter(t=>t.done);const row=(t)=>{let i=data.tasks.indexOf(t);return `<div class="item ${t.done?'done':''}"><button class="check ${t.done?'on':''}" onclick="toggleTask(${i})">${t.done?'✓':''}</button><label>${esc(t.name)}<div class="small">${esc(t.priority||'Normal')}${t.due?' · Due '+esc(t.due):''}</div></label><button class="delete" onclick="removeTask(${i})">×</button></div>`};$('taskList').innerHTML=pending.map(row).join('')||'<div class="empty">Nothing on your list. Enjoy the breathing space.</div>';$('completedList').innerHTML=done.map(row).join('')||'<div class="empty">Your finished tasks will appear here.</div>';$('taskCount').textContent=pending.length+' left';$('todayTaskCount').textContent=pending.length;$('todayTasks').innerHTML=pending.slice(0,3).map(row).join('')||'<div class="empty">No tasks today. Enjoy the breathing space.</div>'}
+function updateWater(){['waterCount','waterCount2'].forEach(id=>$(id).textContent=data.water+' / 8');['waterBar','waterBar2'].forEach(id=>$(id).style.width=(data.water/8*100)+'%')}
+function addWater(){data.water=Math.min(8,data.water+1);persist();updateWater()}
+function resetWater(){data.water=0;persist();updateWater()}
+function mood(emoji,label){data.mood=emoji+' '+label;persist();$('moodText').textContent='Today you’re feeling '+data.mood+'. Thanks for checking in.';document.querySelectorAll('.moodbtn').forEach(b=>b.classList.toggle('selected',b.textContent===emoji))}
+function addWorkout(){let x=$('workout');if(!x.value.trim())return;data.workouts.unshift(x.value.trim());x.value='';persist();renderWorkouts()}
+function renderWorkouts(){$('workoutList').innerHTML=data.workouts.map(w=>`<div class="item">${esc(w)}</div>`).join('')||'<div class="empty">Your movement notes will appear here.</div>'}
+function saveNote(){data.note=$('healthNote').value;persist();$('noteSaved').textContent='Saved just for you.';toast('Note saved')}
+function addEvent(){let n=$('eventName'),d=$('eventDate');if(!n.value.trim()||!d.value){toast('Add a name and date');return}data.events.push({name:n.value.trim(),date:d.value,type:$('eventType').value});n.value='';d.value='';persist();renderCalendar();toast('Date saved')}
+function changeMonth(n){calDate.setMonth(calDate.getMonth()+n);renderCalendar()}
+function renderCalendar(){let y=calDate.getFullYear(),m=calDate.getMonth(),first=new Date(y,m,1),offset=(first.getDay()+6)%7,days=new Date(y,m+1,0).getDate();$('monthTitle').textContent=first.toLocaleDateString('en-GB',{month:'long',year:'numeric'});let names=['M','T','W','T','F','S','S'];$('calendar').innerHTML=names.map(x=>`<div class="small">${x}</div>`).join('')+Array.from({length:offset},()=>'<div></div>').join('')+Array.from({length:days},(_,i)=>{let day=i+1,iso=`${y}-${String(m+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`,today=new Date().toISOString().slice(0,10),has=data.events.some(e=>e.date===iso);return `<div class="${iso===today?'today':''} ${has?'has-event':''}" title="${has?'Event':''}">${day}</div>`}).join('');$('eventList').innerHTML=data.events.slice().sort((a,b)=>a.date.localeCompare(b.date)).map((e,i)=>`<div class="item"><label>${esc(e.name)}<div class="small">${esc(e.date)} · ${esc(e.type||'Personal')}</div></label><button class="delete" onclick="removeEvent(${data.events.indexOf(e)})">×</button></div>`).join('')||'<div class="empty">No dates added yet.</div>';let upcoming=data.events.filter(e=>e.date>=new Date().toISOString().slice(0,10)).sort((a,b)=>a.date.localeCompare(b.date));$('upcomingToday').innerHTML=upcoming.slice(0,2).map(e=>`<div class="item"><label>${esc(e.name)}<div class="small">${esc(e.date)}</div></label></div>`).join('')||'Your upcoming dates will appear here.'}
+function removeEvent(i){data.events.splice(i,1);persist();renderCalendar()}
+function toggleDark(){document.body.classList.toggle('dark');let on=document.body.classList.contains('dark');$('darkButton').textContent=on?'☀ Light mode':'☾ Dark mode';localStorage.setItem('daywell-dark',on?'1':'0')}
+function saveName(){data.name=$('displayName').value.trim();persist();$('nameSaved').textContent=data.name?`Lovely to have you here, ${data.name}.`:'Name cleared.';updateGreeting()}
+function updateGreeting(){let name=data.name?`, ${esc(data.name)}`:'';document.querySelector('#today h1').textContent='Today'+name+', gently.'}
+function exportData(){let blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='daywell-my-data.json';a.click();URL.revokeObjectURL(url)}
+function renderAll(){let d=new Date();$('todayDate').textContent=d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'});renderBudget();renderTasks();updateWater();renderWorkouts();$('healthNote').value=data.note||'';$('displayName').value=data.name||'';if(data.mood)$('moodText').textContent='Today you’re feeling '+data.mood+'. Thanks for checking in.';updateGreeting();renderCalendar()}
+if(localStorage.getItem('daywell-dark')==='1')document.body.classList.add('dark');
 </script>
 </body></html>
